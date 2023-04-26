@@ -2,33 +2,42 @@ const express = require('express');
 const app = express();
 
 // Define a route that will send an SVG in text format
-app.get('/svg', (req, res) => {
-  const svg = `<svg
+app.get('/', (req, res) => {
+  const name = req.query.name || "Shiva";
+  const color = req.query.color || "FFAA44";
+  const emoji = req.query.emoji || "👋";
+  const full = req.query.full || `Hi there, I&#039;m ${name} ${emoji}`;
+  const size = req.query.size || 25;
+  const bg = req.query.bg || '00000000';
+  const delay = req.query.delay || 5000;
+  const bold = req.query.bold || 900;
+  const svg = req.query.svg || `<svg
   xmlns='http://www.w3.org/2000/svg'
   xmlns:xlink='http://www.w3.org/1999/xlink'
   viewBox='0 0 400 50'
-  style='background-color: #00000000;'
+  style='background-color: #${bg};'
   width='100%' height='100%'>
   <path id='path0'>
     <animate
       id='d0'
       attributeName='d'
       begin='0s;d0.end'
-      dur='5000ms'
+      dur='${delay}ms'
       fill='remove'
       values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0'
       keyTimes='0;0.8;0.8;1'
     />
   </path>
   <text
-    font-family='"monospace", monospace'
-    fill='#FFAA44'
-    font-size='25'
+    font-family='"Courier New", monospace'
+    font-weight='${bold}'
+    fill='#${color}'
+    font-size='${size}'
     dominant-baseline='middle'
     x='50%'
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
-            𝙷𝚒 𝚝𝚑𝚎𝚛𝚎, 𝙸&#039;𝚖 𝚂𝚑𝚒𝚟𝚊 👋
+      ${full}
     </textPath>
   </text>
 </svg>`;
