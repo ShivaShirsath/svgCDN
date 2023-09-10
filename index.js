@@ -3,7 +3,6 @@ const app = express();
 
 // Define a route that will send an SVG in text format
 app.get('/', (req, res) => {
-  const newLine = req.query.line || "";
   const name = req.query.name || "Shiva";
   const color = req.query.color || "FFAA44";
   const emoji = req.query.emoji || "👋";
@@ -29,16 +28,6 @@ app.get('/', (req, res) => {
       keyTimes='0;0.8;0.8;1'
     />
   </path>
-  <path id='path1'>
-    <animate
-      attributeName='opacity'
-      from='0'
-      to='1'
-      begin='${delay}ms'
-      dur='1000ms'
-      fill='remove'
-    />
-  </path>
   <text
     font-family='"Courier New", monospace'
     font-weight='${bold}'
@@ -49,19 +38,6 @@ app.get('/', (req, res) => {
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
       ${full}
-    </textPath>
-  </text>
-  <text
-    font-family='"Courier New", monospace'
-    font-weight='${bold}'
-    fill='#${color}'
-    font-size='${size}'
-    dominant-baseline='middle'
-    x='50%'
-    y='25%'
-    text-anchor='middle'>
-    <textPath xlink:href='#path1'>
-      ${newLine}
     </textPath>
   </text>
 </svg>`;
