@@ -29,6 +29,16 @@ app.get('/', (req, res) => {
       keyTimes='0;0.8;0.8;1'
     />
   </path>
+<path id='path1'>
+    <animate
+    attributeName="opacity"
+    begin="0s; d0.end"
+    dur="1s"
+    repeatCount="indefinite"
+    values="1;0;1"
+    keyTimes="0;0.5;1"
+  />
+  </path>
   <text
     font-family='"Courier New", monospace'
     font-weight='${bold}'
@@ -38,7 +48,10 @@ app.get('/', (req, res) => {
     x='50%'
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
-      ${full}${"\n"}${newLine}
+      ${full}
+    </textPath>
+    <textPath xlink:href='#path1'>
+      ${newLine}
     </textPath>
   </text>
 </svg>`;
