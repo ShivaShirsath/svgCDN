@@ -29,15 +29,15 @@ app.get('/', (req, res) => {
       keyTimes='0;0.8;0.8;1'
     />
   </path>
-<path id='path1'>
+  <path id='path1'>
     <animate
-    attributeName="opacity"
-    begin="0s; d0.end"
-    dur="1s"
-    repeatCount="indefinite"
-    values="1;0;1"
-    keyTimes="0;0.5;1"
-  />
+      attributeName='opacity'
+      from='0'
+      to='1'
+      begin='${delay}ms'
+      dur='1000ms'
+      fill='remove'
+    />
   </path>
   <text
     font-family='"Courier New", monospace'
