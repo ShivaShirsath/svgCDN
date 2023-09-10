@@ -50,6 +50,16 @@ app.get('/', (req, res) => {
     <textPath xlink:href='#path0'>
       ${full}
     </textPath>
+  </text>
+  <text
+    font-family='"Courier New", monospace'
+    font-weight='${bold}'
+    fill='#${color}'
+    font-size='${size}'
+    dominant-baseline='middle'
+    x='50%'
+    y='25%'
+    text-anchor='middle'>
     <textPath xlink:href='#path1'>
       ${newLine}
     </textPath>
