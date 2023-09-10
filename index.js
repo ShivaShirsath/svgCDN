@@ -39,9 +39,21 @@ app.get('/', (req, res) => {
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
       ${full}
-      \n${newLine}
     </textPath>
   </text>
+  ${ newLine && <text
+    font-family='"Courier New", monospace'
+    font-weight='${bold}'
+    fill='#${color}'
+    font-size='${size}'
+    dominant-baseline='middle'
+    x='50%'
+    text-anchor='middle'>
+    <textPath xlink:href='#path0'>
+      ${newLine}
+    </textPath>
+  </text>
+  }
 </svg>`;
   res.set('Content-Type', 'image/svg+xml');
   res.send(svg);
