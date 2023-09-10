@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
       ${full}
     </textPath>
   </text>
-  ${ newLine && <text
+  <text
     font-family='"Courier New", monospace'
     font-weight='${bold}'
     fill='#${color}'
@@ -53,7 +53,6 @@ app.get('/', (req, res) => {
       ${newLine}
     </textPath>
   </text>
-  }
 </svg>`;
   res.set('Content-Type', 'image/svg+xml');
   res.send(svg);
