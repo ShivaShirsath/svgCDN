@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
       ${full}
-      ${newLine}
+      \n${newLine}
     </textPath>
   </text>
 </svg>`;
