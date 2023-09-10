@@ -3,6 +3,7 @@ const app = express();
 
 // Define a route that will send an SVG in text format
 app.get('/', (req, res) => {
+  const newLine = req.query.line || "";
   const name = req.query.name || "Shiva";
   const color = req.query.color || "FFAA44";
   const emoji = req.query.emoji || "👋";
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
     text-anchor='middle'>
     <textPath xlink:href='#path0'>
       ${full}
+      ${newLine}
     </textPath>
   </text>
 </svg>`;
